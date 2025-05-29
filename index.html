@@ -68,19 +68,46 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Unique Animated Background -->
         <div class="hero-background">
-            <div class="floating-element" style="top: 20%; left: 10%;">
-                <i class="fas fa-heart"></i>
+            <!-- Floating Memory Bubbles -->
+            <div class="memory-bubble" style="top: 15%; left: 8%;" data-memory="childhood">
+                <div class="bubble-content">
+                    <i class="fas fa-baby"></i>
+                    <span class="bubble-text">First Steps</span>
+                </div>
             </div>
-            <div class="floating-element" style="top: 30%; right: 15%;">
-                <i class="fas fa-book-open"></i>
+            <div class="memory-bubble" style="top: 25%; right: 12%;" data-memory="love">
+                <div class="bubble-content">
+                    <i class="fas fa-heart"></i>
+                    <span class="bubble-text">First Love</span>
+                </div>
             </div>
-            <div class="floating-element" style="bottom: 30%; left: 20%;">
-                <i class="fas fa-sparkles"></i>
+            <div class="memory-bubble" style="bottom: 35%; left: 15%;" data-memory="growth">
+                <div class="bubble-content">
+                    <i class="fas fa-seedling"></i>
+                    <span class="bubble-text">Growth</span>
+                </div>
             </div>
-            <div class="floating-element" style="bottom: 20%; right: 10%;">
-                <i class="fas fa-star"></i>
+            <div class="memory-bubble" style="bottom: 25%; right: 8%;" data-memory="dreams">
+                <div class="bubble-content">
+                    <i class="fas fa-star"></i>
+                    <span class="bubble-text">Dreams</span>
+                </div>
             </div>
+
+            <!-- Unique Constellation Effect -->
+            <div class="constellation">
+                <div class="constellation-line" data-from="0" data-to="1"></div>
+                <div class="constellation-line" data-from="1" data-to="2"></div>
+                <div class="constellation-line" data-from="2" data-to="3"></div>
+                <div class="constellation-line" data-from="3" data-to="0"></div>
+            </div>
+
+            <!-- Animated Quote Particles -->
+            <div class="quote-particle" style="top: 10%; left: 25%;">"</div>
+            <div class="quote-particle" style="top: 40%; right: 20%;">"</div>
+            <div class="quote-particle" style="bottom: 15%; left: 30%;">"</div>
         </div>
 
         <div class="container">
@@ -289,6 +316,84 @@
         </div>
     </section>
 
+    <!-- Unique Interactive Life Timeline -->
+    <section class="life-timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Life Journey <span class="gradient-text">Visualized</span></h2>
+                <p>Explore how SoulScript helps you map the beautiful tapestry of your life experiences across different ages and stages.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item" data-age="5-12" data-aos="fade-right">
+                    <div class="timeline-marker childhood">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Childhood Wonder</h3>
+                        <p>Capture the magic of your earliest memories, family traditions, and the innocent curiosity that shaped your worldview.</p>
+                        <div class="timeline-prompts">
+                            <span class="prompt-tag">"What made you feel safest?"</span>
+                            <span class="prompt-tag">"Who was your hero?"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-age="13-25" data-aos="fade-left">
+                    <div class="timeline-marker growth">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Discovery & Growth</h3>
+                        <p>Document the transformative years of self-discovery, first loves, dreams, and the challenges that forged your character.</p>
+                        <div class="timeline-prompts">
+                            <span class="prompt-tag">"When did you first feel grown up?"</span>
+                            <span class="prompt-tag">"What dream felt impossible?"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-age="26-45" data-aos="fade-right">
+                    <div class="timeline-marker achievements">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Building & Achieving</h3>
+                        <p>Reflect on career milestones, relationships, family building, and the moments of triumph and learning from setbacks.</p>
+                        <div class="timeline-prompts">
+                            <span class="prompt-tag">"What achievement means most?"</span>
+                            <span class="prompt-tag">"What would you do differently?"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-age="46+" data-aos="fade-left">
+                    <div class="timeline-marker legacy">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Wisdom & Legacy</h3>
+                        <p>Contemplate the wisdom gained, the legacy you're building, and the stories you want to pass on to future generations.</p>
+                        <div class="timeline-prompts">
+                            <span class="prompt-tag">"How do you want to be remembered?"</span>
+                            <span class="prompt-tag">"What wisdom would you share?"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-cta">
+                <p class="timeline-message">Every age brings new stories. Start capturing yours today.</p>
+                <a href="#download" class="btn btn-primary">
+                    <i class="fas fa-pen-fancy"></i>
+                    Begin Your Story
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Reflection Prompts Section -->
     <section id="prompts" class="prompts">
         <div class="container">
@@ -367,6 +472,106 @@
                     <div class="mini-prompt growth">Life Lessons</div>
                     <div class="mini-prompt achievements">Proud Moments</div>
                     <div class="mini-prompt legacy">Wisdom to Share</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Soul Insights Section -->
+    <section class="soul-insights">
+        <div class="container">
+            <div class="section-header">
+                <h2>Discover Your <span class="gradient-text">Reflection Style</span></h2>
+                <p>SoulScript adapts to your unique personality and reflection preferences. Find your perfect journaling approach.</p>
+            </div>
+
+            <div class="insights-quiz">
+                <div class="quiz-question active" data-question="1">
+                    <h3>How do you prefer to process emotions?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-style="analytical">
+                            <i class="fas fa-brain"></i>
+                            <span>Through deep analysis and understanding</span>
+                        </button>
+                        <button class="quiz-option" data-style="creative">
+                            <i class="fas fa-palette"></i>
+                            <span>Through creative expression and imagery</span>
+                        </button>
+                        <button class="quiz-option" data-style="intuitive">
+                            <i class="fas fa-heart"></i>
+                            <span>Through feeling and intuitive connection</span>
+                        </button>
+                        <button class="quiz-option" data-style="structured">
+                            <i class="fas fa-list"></i>
+                            <span>Through organized lists and frameworks</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reflection-styles">
+                <div class="style-card analytical">
+                    <div class="style-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>The Analytical Soul</h3>
+                    <p>You thrive on deep thinking and connecting patterns. Your reflections explore the 'why' behind experiences.</p>
+                    <div class="style-features">
+                        <span class="feature">Cause & Effect Analysis</span>
+                        <span class="feature">Pattern Recognition</span>
+                        <span class="feature">Logical Frameworks</span>
+                    </div>
+                </div>
+
+                <div class="style-card creative">
+                    <div class="style-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>The Creative Storyteller</h3>
+                    <p>You see life as a beautiful narrative. Your reflections paint vivid pictures and explore metaphors.</p>
+                    <div class="style-features">
+                        <span class="feature">Visual Storytelling</span>
+                        <span class="feature">Metaphorical Thinking</span>
+                        <span class="feature">Artistic Expression</span>
+                    </div>
+                </div>
+
+                <div class="style-card intuitive">
+                    <div class="style-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>The Intuitive Feeler</h3>
+                    <p>You trust your inner wisdom and emotional intelligence. Your reflections honor feelings and instincts.</p>
+                    <div class="style-features">
+                        <span class="feature">Emotional Intelligence</span>
+                        <span class="feature">Inner Wisdom</span>
+                        <span class="feature">Mindful Awareness</span>
+                    </div>
+                </div>
+
+                <div class="style-card structured">
+                    <div class="style-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3>The Structured Planner</h3>
+                    <p>You love organization and clear frameworks. Your reflections create actionable insights and goals.</p>
+                    <div class="style-features">
+                        <span class="feature">Goal Setting</span>
+                        <span class="feature">Action Planning</span>
+                        <span class="feature">Progress Tracking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insights-cta">
+                <div class="cta-content">
+                    <h3>Ready to discover your unique reflection style?</h3>
+                    <p>Take our 2-minute Soul Insights quiz and get personalized prompts tailored to your personality.</p>
+                    <button class="btn btn-primary btn-large quiz-start">
+                        <i class="fas fa-magic"></i>
+                        Discover My Style
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
