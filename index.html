@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulScript - Personal Reflection & Life Story App</title>
+    <meta name="description" content="Transform your inner thoughts into meaningful stories with SoulScript. A premium personal reflection app featuring 15 curated life prompts, intelligent journaling, and beautiful export options. Privacy-focused with local data storage.">
+    <meta name="keywords" content="personal reflection, life story, journaling app, self-reflection, autobiography, mindfulness, personal growth, life prompts, digital diary, privacy-focused">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soulscript.app/">
+    <meta property="og:title" content="SoulScript - Personal Reflection & Life Story App">
+    <meta property="og:description" content="Transform your inner thoughts into meaningful stories with SoulScript. A premium personal reflection app featuring 15 curated life prompts, intelligent journaling, and beautiful export options.">
+    <meta property="og:image" content="https://soulscript.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://soulscript.app/">
+    <meta property="twitter:title" content="SoulScript - Personal Reflection & Life Story App">
+    <meta property="twitter:description" content="Transform your inner thoughts into meaningful stories with SoulScript. Privacy-focused personal reflection app with 15 curated life prompts.">
+    <meta property="twitter:image" content="https://soulscript.app/twitter-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <span class="brand-name">SoulScript</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#chapters">Life Chapters</a>
+                <a href="#prompts">Prompts</a>
+                <a href="#testimonials">Testimonials</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="#download" class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Download
+                </a>
+                <a href="#get-started" class="btn btn-primary">
+                    <i class="fas fa-sparkles"></i>
+                    Start Reflecting
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-element" style="top: 20%; left: 10%;">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="floating-element" style="top: 30%; right: 15%;">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <div class="floating-element" style="bottom: 30%; left: 20%;">
+                <i class="fas fa-sparkles"></i>
+            </div>
+            <div class="floating-element" style="bottom: 20%; right: 10%;">
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    Transform Your Inner Thoughts Into Meaningful Stories
+                </div>
+
+                <h1 class="hero-title">
+                    Your Life Story<br>
+                    <span class="gradient-text">Beautifully Told</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    SoulScript is a premium personal reflection app featuring 15 curated life prompts,
+                    intelligent journaling, and beautiful export options. Privacy-focused with local data storage.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#get-started" class="btn btn-primary btn-large">
+                        <i class="fas fa-heart"></i>
+                        Start Your Journey
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <button class="btn btn-secondary btn-large">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-value">10K+</div>
+                        <div class="stat-label">Active Reflectors</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-value">25K+</div>
+                        <div class="stat-label">Life Stories Created</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-value">4.8★</div>
+                        <div class="stat-label">App Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="stat-value">50K+</div>
+                        <div class="stat-label">Downloads</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need for <span class="gradient-text">Meaningful Reflection</span></h2>
+                <p>SoulScript combines thoughtful design with powerful features to create the perfect environment for deep self-reflection and life storytelling.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon heart">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Deep Reflection System</h3>
+                    <p>15 carefully crafted life prompts covering major themes like childhood, regret, love, growth, and legacy.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon book">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Intelligent Journaling</h3>
+                    <p>Rich text editor with word count tracking, auto-save functionality, and chapter-based organization.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon target">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Life Chapters Organization</h3>
+                    <p>Automatic categorization into 5 life themes with visual chapter browsing and color coding.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon lightning">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Streak Tracking & Habits</h3>
+                    <p>Daily reflection streak monitoring with milestone celebrations and customizable reminders.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon shield">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy-Focused</h3>
+                    <p>All data stored locally on your device. No cloud storage, no data transmission, complete offline functionality.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon file">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3>Beautiful Export Options</h3>
+                    <p>Export your reflections as PDF with custom styling, plain text, or Markdown format.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life Chapters Section -->
+    <section id="chapters" class="chapters">
+        <div class="container">
+            <div class="section-header">
+                <h2>Organize Your Life Into <span class="gradient-text">Meaningful Chapters</span></h2>
+                <p>SoulScript automatically categorizes your reflections into five profound life themes, helping you see the beautiful narrative of your journey.</p>
+            </div>
+
+            <div class="chapters-grid">
+                <div class="chapter-card childhood" data-aos="zoom-in">
+                    <div class="chapter-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Childhood</h3>
+                    <p>Explore your earliest memories, formative experiences, and the innocence of youth.</p>
+                    <div class="chapter-prompts">
+                        <div class="prompt">"What is your earliest memory?"</div>
+                        <div class="prompt">"Who was your childhood hero?"</div>
+                        <div class="prompt">"What made you feel safest as a child?"</div>
+                    </div>
+                </div>
+
+                <div class="chapter-card love" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="chapter-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Love & Relationships</h3>
+                    <p>Reflect on connections, heartbreaks, and the people who shaped your heart.</p>
+                    <div class="chapter-prompts">
+                        <div class="prompt">"When did you first experience love?"</div>
+                        <div class="prompt">"Who taught you about forgiveness?"</div>
+                        <div class="prompt">"What relationship changed you most?"</div>
+                    </div>
+                </div>
+
+                <div class="chapter-card growth" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="chapter-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Growth & Learning</h3>
+                    <p>Document your journey of self-discovery, challenges overcome, and wisdom gained.</p>
+                    <div class="chapter-prompts">
+                        <div class="prompt">"What failure taught you the most?"</div>
+                        <div class="prompt">"When did you feel most proud?"</div>
+                        <div class="prompt">"What belief did you outgrow?"</div>
+                    </div>
+                </div>
+
+                <div class="chapter-card achievements" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="chapter-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Achievements & Regrets</h3>
+                    <p>Honor your accomplishments while making peace with paths not taken.</p>
+                    <div class="chapter-prompts">
+                        <div class="prompt">"What achievement means most to you?"</div>
+                        <div class="prompt">"What would you do differently?"</div>
+                        <div class="prompt">"What risk are you glad you took?"</div>
+                    </div>
+                </div>
+
+                <div class="chapter-card legacy" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="chapter-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Legacy & Future</h3>
+                    <p>Envision your impact on the world and the story you want to leave behind.</p>
+                    <div class="chapter-prompts">
+                        <div class="prompt">"How do you want to be remembered?"</div>
+                        <div class="prompt">"What wisdom would you share?"</div>
+                        <div class="prompt">"What dreams still call to you?"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection Prompts Section -->
+    <section id="prompts" class="prompts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Thoughtfully Crafted <span class="gradient-text">Reflection Prompts</span></h2>
+                <p>Our 15 carefully designed prompts guide you through the most meaningful aspects of your life journey, based on psychological principles and human experience.</p>
+            </div>
+
+            <div class="prompts-showcase">
+                <div class="prompt-carousel">
+                    <div class="prompt-slide active" data-category="Childhood">
+                        <div class="prompt-icon childhood">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3>"What is your earliest memory, and how does it make you feel today?"</h3>
+                        <p>Explore the foundations of your identity through your first conscious moments.</p>
+                    </div>
+
+                    <div class="prompt-slide" data-category="Growth">
+                        <div class="prompt-icon growth">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>"Describe a moment when you realized you had grown as a person."</h3>
+                        <p>Reflect on the pivotal moments that shaped your character and wisdom.</p>
+                    </div>
+
+                    <div class="prompt-slide" data-category="Love">
+                        <div class="prompt-icon love">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>"Who taught you the most about love, and what did they teach you?"</h3>
+                        <p>Honor the relationships that opened your heart and changed your perspective.</p>
+                    </div>
+
+                    <div class="prompt-slide" data-category="Legacy">
+                        <div class="prompt-icon legacy">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>"How do you want to be remembered by those who matter most to you?"</h3>
+                        <p>Envision the impact you want to leave and the story you want to tell.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-controls">
+                    <button class="prompt-btn active" data-slide="0">1</button>
+                    <button class="prompt-btn" data-slide="1">2</button>
+                    <button class="prompt-btn" data-slide="2">3</button>
+                    <button class="prompt-btn" data-slide="3">4</button>
+                </div>
+
+                <div class="prompt-navigation">
+                    <button class="nav-btn prev" id="prevPrompt">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next" id="nextPrompt">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="prompts-grid">
+                <h3>All 15 Life-Changing Prompts</h3>
+                <div class="mini-prompts">
+                    <div class="mini-prompt childhood">Childhood Memories</div>
+                    <div class="mini-prompt love">First Love</div>
+                    <div class="mini-prompt growth">Personal Growth</div>
+                    <div class="mini-prompt achievements">Greatest Achievement</div>
+                    <div class="mini-prompt legacy">Life Legacy</div>
+                    <div class="mini-prompt childhood">Family Traditions</div>
+                    <div class="mini-prompt love">Heartbreak & Healing</div>
+                    <div class="mini-prompt growth">Overcoming Fear</div>
+                    <div class="mini-prompt achievements">Biggest Regret</div>
+                    <div class="mini-prompt legacy">Future Dreams</div>
+                    <div class="mini-prompt childhood">Childhood Hero</div>
+                    <div class="mini-prompt love">Forgiveness</div>
+                    <div class="mini-prompt growth">Life Lessons</div>
+                    <div class="mini-prompt achievements">Proud Moments</div>
+                    <div class="mini-prompt legacy">Wisdom to Share</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loved by Reflective <span class="gradient-text">Souls Worldwide</span></h2>
+                <p>Join thousands of people who have discovered the power of structured self-reflection and transformed their relationship with their own story.</p>
+            </div>
+
+            <div class="testimonials-stats">
+                <div class="stat-item">
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-text">Average Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-text">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25K+</div>
+                    <div class="stat-text">Stories Created</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-text">Would Recommend</div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"SoulScript transformed how I approach self-reflection. The prompts are incredibly thoughtful and helped me uncover patterns in my life I never noticed before."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Chen</div>
+                            <div class="author-role">Life Coach & Author</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"As someone who's always been too busy to journal, SoulScript made reflection accessible and meaningful. The export feature let me create a beautiful book for my family."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <div class="author-name">Marcus Rodriguez</div>
+                            <div class="author-role">Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"At 67, I thought I knew my own story. SoulScript helped me discover new chapters and make peace with old ones. The life chapters feature is brilliant."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JT</div>
+                        <div class="author-info">
+                            <div class="author-name">James Thompson</div>
+                            <div class="author-role">Retired Teacher</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-text">
+                    <h2>Start Your <span class="gradient-text">Reflection Journey</span> Today</h2>
+                    <p>Join thousands of people who have transformed their relationship with their own story. Download SoulScript and begin exploring the depths of your life experience.</p>
+
+                    <div class="download-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>15 thoughtfully crafted life prompts</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Complete privacy with local storage</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Beautiful export options (PDF, TXT, MD)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cross-platform compatibility</span>
+                        </div>
+                    </div>
+
+                    <div class="download-buttons">
+                        <a href="#" class="btn btn-primary btn-large">
+                            <i class="fab fa-windows"></i>
+                            Download for Windows
+                        </a>
+                        <a href="#" class="btn btn-secondary btn-large">
+                            <i class="fab fa-apple"></i>
+                            Download for Mac
+                        </a>
+                    </div>
+
+                    <div class="download-links">
+                        <a href="#" class="download-link">
+                            <i class="fab fa-google-play"></i>
+                            <span>Get it on Google Play</span>
+                        </a>
+                        <a href="#" class="download-link">
+                            <i class="fab fa-app-store-ios"></i>
+                            <span>Download on App Store</span>
+                        </a>
+                        <a href="#" class="download-link">
+                            <i class="fas fa-globe"></i>
+                            <span>Try Web Version</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-visual">
+                    <div class="app-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="mockup-title">SoulScript</div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mockup-prompt">
+                                    <h4>"What is your earliest memory?"</h4>
+                                    <div class="mockup-text-area">
+                                        <div class="typing-indicator">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <span class="brand-name">SoulScript</span>
+                    </div>
+                    <p>Transform your inner thoughts into meaningful stories. A premium personal reflection app designed for deep self-discovery.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#chapters">Life Chapters</a>
+                        <a href="#prompts">Reflection Prompts</a>
+                        <a href="#download">Download</a>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">User Guide</a>
+                        <a href="#">FAQ</a>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 SoulScript. All rights reserved. Made with <i class="fas fa-heart"></i> for reflective souls.</p>
+                </div>
+                <div class="footer-badges">
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Privacy First</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-star"></i>
+                        <span>4.8★ Rated</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-users"></i>
+                        <span>10K+ Users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
