@@ -1460,6 +1460,25 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.download-link.upcoming {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.download-link.upcoming span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
 .download-visual {
     display: flex;
     justify-content: center;
