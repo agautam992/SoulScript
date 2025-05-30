@@ -495,6 +495,142 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Style Card Interaction
+    const styleCards = document.querySelectorAll('.style-card');
+
+    styleCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove active class from all cards
+            styleCards.forEach(c => c.classList.remove('active'));
+
+            // Add active class to clicked card
+            this.classList.add('active');
+
+            // Get the style type from the card class
+            const styleType = this.classList.contains('analytical') ? 'analytical' :
+                             this.classList.contains('creative') ? 'creative' :
+                             this.classList.contains('intuitive') ? 'intuitive' :
+                             this.classList.contains('structured') ? 'structured' : '';
+
+            // Create visual feedback
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+
+            // Show style information
+            showStyleInfo(styleType, this);
+
+            // Create sparkle effect
+            createSparkleEffect(this);
+        });
+
+        // Enhanced hover effects
+        card.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+                this.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.15)';
+            }
+        });
+
+        card.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '';
+            }
+        });
+    });
+
+    // Show style information function
+    function showStyleInfo(styleType, cardElement) {
+        const styleDescriptions = {
+            analytical: {
+                title: "The Analytical Soul",
+                description: "You thrive on deep thinking and connecting patterns. Your reflections explore the 'why' behind experiences.",
+                features: ["Cause & Effect Analysis", "Pattern Recognition", "Logical Frameworks"],
+                color: "#3b82f6"
+            },
+            creative: {
+                title: "The Creative Storyteller",
+                description: "You see life as a beautiful narrative. Your reflections paint vivid pictures and explore metaphors.",
+                features: ["Visual Storytelling", "Metaphorical Thinking", "Artistic Expression"],
+                color: "#8b5cf6"
+            },
+            intuitive: {
+                title: "The Intuitive Feeler",
+                description: "You trust your inner wisdom and emotional intelligence. Your reflections honor feelings and instincts.",
+                features: ["Emotional Intelligence", "Inner Wisdom", "Mindful Awareness"],
+                color: "#ef4444"
+            },
+            structured: {
+                title: "The Structured Planner",
+                description: "You love organization and clear frameworks. Your reflections create actionable insights and goals.",
+                features: ["Goal Setting", "Action Planning", "Progress Tracking"],
+                color: "#10b981"
+            }
+        };
+
+        const style = styleDescriptions[styleType];
+        if (style) {
+            // Create a temporary notification
+            const notification = document.createElement('div');
+            notification.className = 'style-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <h4>${style.title}</h4>
+                    <p>${style.description}</p>
+                    <div class="features">
+                        ${style.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+
+            notification.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 2rem;
+                border-radius: 1rem;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                z-index: 1000;
+                max-width: 400px;
+                text-align: center;
+                border-top: 4px solid ${style.color};
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 10);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translate(-50%, -50%) scale(0.9)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+
+            // Click to close
+            notification.addEventListener('click', () => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            });
+        }
+    }
+
     // Sparkle Effect Function
     function createSparkleEffect(element) {
         for (let i = 0; i < 8; i++) {
