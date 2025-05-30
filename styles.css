@@ -1935,7 +1935,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Disable all interactive elements except style cards - Windows Coming Soon Style */
+/* Disable all interactive elements except style cards and mini-reflections - Windows Coming Soon Style */
 button,
 .btn,
 .quiz-option,
@@ -1945,7 +1945,6 @@ button,
 input[type="submit"],
 input[type="button"],
 .download-link,
-.mini-reflection,
 .memory-bubble,
 a[href="#download"],
 a[href="#get-started"],
@@ -2037,6 +2036,156 @@ a[href="#get-started"],
 .sparkle {
     animation: sparkle 1s ease-out forwards;
     pointer-events: none;
+}
+
+/* Enable mini-reflections with interactive styling */
+.mini-reflection {
+    cursor: pointer !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+    filter: none !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-reflection:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.mini-reflection:active {
+    transform: translateY(-1px) scale(1.02) !important;
+}
+
+.mini-reflection.selected {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Pulse animation for mini-reflections */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    }
+}
+
+.mini-reflection.pulsing {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+/* Reflection Modal Styling */
+.reflection-modal .modal-content {
+    background: white;
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.reflection-modal[style*="opacity: 1"] .modal-content {
+    transform: scale(1);
+}
+
+.reflection-modal .modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reflection-modal .modal-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.reflection-modal .modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.reflection-modal .modal-close:hover {
+    background: var(--surface);
+    color: var(--text-primary);
+}
+
+.reflection-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.reflection-modal .reflection-question,
+.reflection-modal .reflection-description {
+    margin-bottom: 1.5rem;
+}
+
+.reflection-modal .modal-body h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.reflection-modal .modal-body p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.reflection-modal .reflection-question p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.reflection-modal .category-tag {
+    display: inline-block;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.reflection-modal .modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.reflection-modal .modal-start {
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transition: all 0.3s ease;
 }
 
 /* Disable hover effects */

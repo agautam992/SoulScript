@@ -631,6 +631,236 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Mini-Reflection Interaction
+    const miniReflections = document.querySelectorAll('.mini-reflection');
+
+    miniReflections.forEach(reflection => {
+        reflection.addEventListener('click', function() {
+            // Remove selected class from all mini-reflections
+            miniReflections.forEach(r => {
+                r.classList.remove('selected', 'pulsing');
+            });
+
+            // Add selected class to clicked reflection
+            this.classList.add('selected');
+
+            // Get the reflection text
+            const reflectionText = this.textContent.trim();
+
+            // Create visual feedback
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+
+            // Show reflection details
+            showReflectionDetails(reflectionText, this);
+
+            // Create sparkle effect
+            createSparkleEffect(this);
+
+            // Add temporary pulsing effect
+            setTimeout(() => {
+                this.classList.add('pulsing');
+                setTimeout(() => {
+                    this.classList.remove('pulsing');
+                }, 2000);
+            }, 500);
+        });
+
+        // Enhanced hover effects
+        reflection.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('selected')) {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+                this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+            }
+        });
+
+        reflection.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('selected')) {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            }
+        });
+    });
+
+    // Show reflection details function
+    function showReflectionDetails(reflectionText, element) {
+        const reflectionDetails = {
+            "Childhood Memories": {
+                question: "What is your earliest memory, and how does it make you feel today?",
+                description: "Explore the foundations of your identity through your first conscious moments and childhood experiences.",
+                category: "childhood",
+                color: "#f59e0b"
+            },
+            "First Love": {
+                question: "When did you first experience love, and what did it teach you?",
+                description: "Reflect on the transformative power of love and its impact on your understanding of relationships.",
+                category: "love",
+                color: "#ef4444"
+            },
+            "Personal Growth": {
+                question: "Describe a moment when you realized you had grown as a person.",
+                description: "Document the pivotal moments that shaped your character and wisdom through life's challenges.",
+                category: "growth",
+                color: "#10b981"
+            },
+            "Greatest Achievement": {
+                question: "What achievement means the most to you, and why?",
+                description: "Honor your accomplishments and the journey that led to your proudest moments.",
+                category: "achievements",
+                color: "#8b5cf6"
+            },
+            "Life Legacy": {
+                question: "How do you want to be remembered by those who matter most to you?",
+                description: "Envision the impact you want to leave and the story you want to tell future generations.",
+                category: "legacy",
+                color: "#3b82f6"
+            },
+            "Family Traditions": {
+                question: "What family tradition means the most to you, and why?",
+                description: "Explore the customs and rituals that connect you to your heritage and loved ones.",
+                category: "childhood",
+                color: "#f59e0b"
+            },
+            "Heartbreak & Healing": {
+                question: "How did heartbreak change you, and what did you learn from healing?",
+                description: "Reflect on the resilience you've built through emotional challenges and recovery.",
+                category: "love",
+                color: "#ef4444"
+            },
+            "Overcoming Fear": {
+                question: "What fear did you overcome, and how did it change your life?",
+                description: "Document your courage in facing fears and the growth that came from stepping outside your comfort zone.",
+                category: "growth",
+                color: "#10b981"
+            },
+            "Biggest Regret": {
+                question: "What would you do differently if you could, and what did you learn?",
+                description: "Make peace with past decisions while extracting wisdom from experiences you wish had gone differently.",
+                category: "achievements",
+                color: "#8b5cf6"
+            },
+            "Future Dreams": {
+                question: "What dreams still call to you, and what steps will you take?",
+                description: "Explore the aspirations that continue to inspire you and your vision for the future.",
+                category: "legacy",
+                color: "#3b82f6"
+            },
+            "Childhood Hero": {
+                question: "Who was your childhood hero, and how did they influence you?",
+                description: "Reflect on the people who inspired you in your formative years and their lasting impact.",
+                category: "childhood",
+                color: "#f59e0b"
+            },
+            "Forgiveness": {
+                question: "Who taught you about forgiveness, and what did you learn?",
+                description: "Explore the profound lessons about letting go and the healing power of forgiveness.",
+                category: "love",
+                color: "#ef4444"
+            },
+            "Life Lessons": {
+                question: "What life lesson took you the longest to learn?",
+                description: "Document the wisdom that came through experience and the journey of understanding.",
+                category: "growth",
+                color: "#10b981"
+            },
+            "Proud Moments": {
+                question: "When did you feel most proud of yourself, and why?",
+                description: "Celebrate the moments when you exceeded your own expectations and felt genuine pride.",
+                category: "achievements",
+                color: "#8b5cf6"
+            },
+            "Wisdom to Share": {
+                question: "What wisdom would you share with someone just starting their journey?",
+                description: "Distill your life experiences into meaningful advice for future generations.",
+                category: "legacy",
+                color: "#3b82f6"
+            }
+        };
+
+        const details = reflectionDetails[reflectionText];
+        if (details) {
+            // Create a detailed modal
+            const modal = document.createElement('div');
+            modal.className = 'reflection-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header" style="border-top: 4px solid ${details.color}">
+                        <h3>${reflectionText}</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="reflection-question">
+                            <h4>Reflection Question:</h4>
+                            <p>"${details.question}"</p>
+                        </div>
+                        <div class="reflection-description">
+                            <h4>Purpose:</h4>
+                            <p>${details.description}</p>
+                        </div>
+                        <div class="reflection-category">
+                            <span class="category-tag ${details.category}" style="background-color: ${details.color}">
+                                ${details.category.charAt(0).toUpperCase() + details.category.slice(1)}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary modal-start" style="background-color: ${details.color}">
+                            <i class="fas fa-clock"></i> Coming Soon
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+
+            document.body.appendChild(modal);
+
+            // Animate in
+            setTimeout(() => {
+                modal.style.opacity = '1';
+            }, 10);
+
+            // Close functionality
+            const closeModal = () => {
+                modal.style.opacity = '0';
+                setTimeout(() => {
+                    if (document.body.contains(modal)) {
+                        document.body.removeChild(modal);
+                    }
+                }, 300);
+            };
+
+            modal.querySelector('.modal-close').addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // ESC key to close
+            const escHandler = (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    document.removeEventListener('keydown', escHandler);
+                }
+            };
+            document.addEventListener('keydown', escHandler);
+        }
+    }
+
     // Sparkle Effect Function
     function createSparkleEffect(element) {
         for (let i = 0; i < 8; i++) {
