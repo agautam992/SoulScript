@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3SQF8EK4B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R3SQF8EK4B');
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -482,25 +494,119 @@
             </div>
 
             <div class="insights-quiz">
-                <div class="quiz-question active" data-question="1">
+                <!-- Step 1: User Information -->
+                <div class="quiz-step active" data-step="1">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <span class="progress-text">Step 1 of 4</span>
+                    </div>
+                    <h3>Let's Get Started</h3>
+                    <p>Tell us a bit about yourself to personalize your reflection journey</p>
+                    <div class="quiz-form">
+                        <div class="form-group">
+                            <label for="userName">Your Name</label>
+                            <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Email Address</label>
+                            <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required>
+                        </div>
+                        <button class="btn btn-primary quiz-next" onclick="nextQuizStep()">
+                            Continue <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Reflection Style Question -->
+                <div class="quiz-step" data-step="2">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                        <span class="progress-text">Step 2 of 4</span>
+                    </div>
                     <h3>How do you prefer to process emotions?</h3>
                     <div class="quiz-options">
-                        <button class="quiz-option" data-style="analytical">
+                        <button class="quiz-option" data-style="analytical" onclick="selectOption(this, 'style', 'analytical')">
                             <i class="fas fa-brain"></i>
                             <span>Through deep analysis and understanding</span>
                         </button>
-                        <button class="quiz-option" data-style="creative">
+                        <button class="quiz-option" data-style="creative" onclick="selectOption(this, 'style', 'creative')">
                             <i class="fas fa-palette"></i>
                             <span>Through creative expression and imagery</span>
                         </button>
-                        <button class="quiz-option" data-style="intuitive">
+                        <button class="quiz-option" data-style="intuitive" onclick="selectOption(this, 'style', 'intuitive')">
                             <i class="fas fa-heart"></i>
                             <span>Through feeling and intuitive connection</span>
                         </button>
-                        <button class="quiz-option" data-style="structured">
+                        <button class="quiz-option" data-style="structured" onclick="selectOption(this, 'style', 'structured')">
                             <i class="fas fa-list"></i>
                             <span>Through organized lists and frameworks</span>
                         </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Time Preference Question -->
+                <div class="quiz-step" data-step="3">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="progress-text">Step 3 of 4</span>
+                    </div>
+                    <h3>When do you prefer to reflect?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-time="morning" onclick="selectOption(this, 'time', 'morning')">
+                            <i class="fas fa-sun"></i>
+                            <span>Morning - Fresh start with clear mind</span>
+                        </button>
+                        <button class="quiz-option" data-time="evening" onclick="selectOption(this, 'time', 'evening')">
+                            <i class="fas fa-moon"></i>
+                            <span>Evening - Winding down and processing the day</span>
+                        </button>
+                        <button class="quiz-option" data-time="flexible" onclick="selectOption(this, 'time', 'flexible')">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible - Whenever inspiration strikes</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Results -->
+                <div class="quiz-step" data-step="4">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="progress-text">Complete!</span>
+                    </div>
+                    <div class="quiz-results">
+                        <div class="results-header">
+                            <i class="fas fa-sparkles"></i>
+                            <h3>Your Personalized Reflection Profile</h3>
+                            <p class="user-greeting"></p>
+                        </div>
+                        <div class="results-content">
+                            <div class="result-style">
+                                <h4>Your Reflection Style</h4>
+                                <div class="style-result"></div>
+                            </div>
+                            <div class="result-recommendations">
+                                <h4>Recommended for You</h4>
+                                <div class="recommendations-list"></div>
+                            </div>
+                            <div class="result-actions">
+                                <button class="btn btn-primary" onclick="submitQuizResults()">
+                                    <i class="fas fa-bell"></i>
+                                    Notify Me When SoulMemoir Launches
+                                </button>
+                                <button class="btn btn-secondary" onclick="restartQuiz()">
+                                    <i class="fas fa-redo"></i>
+                                    Take Quiz Again
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

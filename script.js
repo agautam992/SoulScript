@@ -226,30 +226,209 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Soul Insights Quiz Functionality
-    const quizOptions = document.querySelectorAll('.quiz-option');
-    const styleCards = document.querySelectorAll('.style-card');
+    window.quizData = {
+        userName: '',
+        userEmail: '',
+        style: '',
+        time: ''
+    };
 
-    quizOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            const selectedStyle = this.dataset.style;
+    window.currentStep = 1;
 
-            // Remove previous selections
-            quizOptions.forEach(opt => opt.classList.remove('selected'));
-            styleCards.forEach(card => card.classList.remove('highlighted'));
+    // Quiz navigation functions
+    window.nextQuizStep = function() {
+        const currentStepEl = document.querySelector(`.quiz-step[data-step="${window.currentStep}"]`);
 
-            // Highlight selected option
-            this.classList.add('selected');
+        if (window.currentStep === 1) {
+            // Validate form inputs
+            const nameInput = document.getElementById('userName');
+            const emailInput = document.getElementById('userEmail');
 
-            // Highlight corresponding style card
-            const targetCard = document.querySelector(`.style-card.${selectedStyle}`);
-            if (targetCard) {
-                targetCard.classList.add('highlighted');
-                targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (!nameInput.value.trim()) {
+                nameInput.focus();
+                nameInput.style.borderColor = '#ef4444';
+                return;
             }
 
-            // Create personalized message
-            showPersonalizedMessage(selectedStyle);
+            if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+                emailInput.focus();
+                emailInput.style.borderColor = '#ef4444';
+                return;
+            }
+
+            // Store user data
+            window.quizData.userName = nameInput.value.trim();
+            window.quizData.userEmail = emailInput.value.trim();
+        }
+
+        // Move to next step
+        currentStepEl.classList.remove('active');
+        window.currentStep++;
+
+        const nextStepEl = document.querySelector(`.quiz-step[data-step="${window.currentStep}"]`);
+        if (nextStepEl) {
+            nextStepEl.classList.add('active');
+        }
+    };
+
+    window.selectOption = function(element, type, value) {
+        // Store the selection
+        window.quizData[type] = value;
+
+        // Visual feedback
+        const options = element.parentElement.querySelectorAll('.quiz-option');
+        options.forEach(opt => opt.classList.remove('selected'));
+        element.classList.add('selected');
+
+        // Auto-advance after a short delay
+        setTimeout(() => {
+            const currentStepEl = document.querySelector(`.quiz-step[data-step="${window.currentStep}"]`);
+            currentStepEl.classList.remove('active');
+            window.currentStep++;
+
+            const nextStepEl = document.querySelector(`.quiz-step[data-step="${window.currentStep}"]`);
+            if (nextStepEl) {
+                nextStepEl.classList.add('active');
+
+                // If this is the results step, show results
+                if (window.currentStep === 4) {
+                    showQuizResults();
+                }
+            }
+        }, 1000);
+    };
+
+    window.showQuizResults = function() {
+        const { userName, style, time } = window.quizData;
+
+        // Update greeting
+        const greeting = document.querySelector('.user-greeting');
+        greeting.textContent = `Hello ${userName}! Here's your personalized reflection profile.`;
+
+        // Show style result
+        const styleResult = document.querySelector('.style-result');
+        const styleDescriptions = {
+            analytical: "You're an Analytical Soul who thrives on deep thinking and connecting patterns. Your reflections explore the 'why' behind experiences with logical frameworks and cause-effect analysis.",
+            creative: "You're a Creative Storyteller who sees life as a beautiful narrative. Your reflections paint vivid pictures and explore metaphors through visual storytelling and artistic expression.",
+            intuitive: "You're an Intuitive Feeler who trusts inner wisdom and emotional intelligence. Your reflections honor feelings and instincts through mindful awareness and emotional intelligence.",
+            structured: "You're a Structured Planner who loves organization and clear frameworks. Your reflections create actionable insights and goals through systematic planning and progress tracking."
+        };
+
+        styleResult.textContent = styleDescriptions[style] || "Your unique reflection style is being analyzed...";
+
+        // Show recommendations
+        const recommendationsList = document.querySelector('.recommendations-list');
+        const recommendations = {
+            analytical: [
+                "Start with pattern-recognition prompts that help you identify recurring themes",
+                "Use structured frameworks to analyze your experiences systematically",
+                "Track your personal growth with measurable insights and data points",
+                "Explore cause-and-effect relationships in your life decisions"
+            ],
+            creative: [
+                "Begin with visual storytelling prompts that inspire artistic expression",
+                "Use metaphors and imagery to describe your life experiences",
+                "Create beautiful narratives that capture the essence of your journey",
+                "Express emotions through creative writing and artistic reflection"
+            ],
+            intuitive: [
+                "Focus on emotion-centered prompts that honor your feelings",
+                "Trust your inner wisdom and gut instincts in your reflections",
+                "Practice mindful awareness and present-moment reflection",
+                "Explore your emotional intelligence and interpersonal connections"
+            ],
+            structured: [
+                "Use goal-oriented prompts that help you plan and organize",
+                "Create actionable insights from your reflection sessions",
+                "Track your progress with systematic frameworks and checklists",
+                "Set clear objectives for your personal development journey"
+            ]
+        };
+
+        const userRecommendations = recommendations[style] || [];
+        recommendationsList.innerHTML = userRecommendations
+            .map(rec => `<div class="recommendation-item">${rec}</div>`)
+            .join('');
+    };
+
+    window.submitQuizResults = function() {
+        const { userName, userEmail, style, time } = window.quizData;
+
+        // Here you would typically send data to your backend
+        console.log('Quiz Results:', {
+            name: userName,
+            email: userEmail,
+            reflectionStyle: style,
+            preferredTime: time,
+            timestamp: new Date().toISOString()
         });
+
+        // Show success message
+        const message = document.createElement('div');
+        message.className = 'success-message';
+        message.innerHTML = `
+            <div class="message-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank you, ${userName}!</h3>
+                <p>We'll notify you at ${userEmail} when SoulMemoir launches with your personalized reflection experience.</p>
+            </div>
+        `;
+        message.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(16, 185, 129, 0.95);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            z-index: 1000;
+            max-width: 400px;
+            text-align: center;
+            animation: messageSlideIn 0.5s ease-out;
+        `;
+
+        document.body.appendChild(message);
+
+        setTimeout(() => {
+            message.style.animation = 'messageSlideOut 0.5s ease-in forwards';
+            setTimeout(() => message.remove(), 500);
+        }, 4000);
+    };
+
+    window.restartQuiz = function() {
+        // Reset quiz data
+        window.quizData = {
+            userName: '',
+            userEmail: '',
+            style: '',
+            time: ''
+        };
+        window.currentStep = 1;
+
+        // Reset form
+        document.getElementById('userName').value = '';
+        document.getElementById('userEmail').value = '';
+
+        // Reset all steps
+        document.querySelectorAll('.quiz-step').forEach(step => {
+            step.classList.remove('active');
+        });
+
+        // Show first step
+        document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
+
+        // Remove selections
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.classList.remove('selected');
+        });
+    };
+
+    // Input validation styling
+    document.addEventListener('input', function(e) {
+        if (e.target.matches('#userName, #userEmail')) {
+            e.target.style.borderColor = '';
+        }
     });
 
     // Timeline Items Animation on Scroll
