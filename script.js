@@ -235,6 +235,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.currentStep = 1;
 
+    // Debug: Log quiz initialization
+    console.log('Quiz initialized, current step:', window.currentStep);
+    console.log('Active quiz steps:', document.querySelectorAll('.quiz-step.active').length);
+
     // Quiz navigation functions
     window.nextQuizStep = function() {
         const currentStepEl = document.querySelector(`.quiz-step[data-step="${window.currentStep}"]`);
@@ -354,46 +358,49 @@ document.addEventListener('DOMContentLoaded', function() {
     window.submitQuizResults = function() {
         const { userName, userEmail, style, time } = window.quizData;
 
-        // Here you would typically send data to your backend
-        console.log('Quiz Results:', {
-            name: userName,
-            email: userEmail,
-            reflectionStyle: style,
-            preferredTime: time,
-            timestamp: new Date().toISOString()
+        // Submit data to server
+        fetch('submit_quiz.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userName: userName,
+                userEmail: userEmail,
+                style: style,
+                time: time
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(`Thank you ${userName}! Your information has been saved. We'll notify you when SoulMemoir launches!`);
+            } else {
+                // Fallback: create downloadable file
+                const userData = `${userName},${userEmail},${style},${time}\n`;
+                const blob = new Blob([userData], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'user_signup.txt';
+                a.click();
+                URL.revokeObjectURL(url);
+                alert(`Thank you ${userName}! Your information has been saved locally.`);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Fallback: create downloadable file
+            const userData = `${userName},${userEmail},${style},${time}\n`;
+            const blob = new Blob([userData], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'user_signup.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            alert(`Thank you ${userName}! Your information has been saved locally.`);
         });
-
-        // Show success message
-        const message = document.createElement('div');
-        message.className = 'success-message';
-        message.innerHTML = `
-            <div class="message-content">
-                <i class="fas fa-check-circle"></i>
-                <h3>Thank you, ${userName}!</h3>
-                <p>We'll notify you at ${userEmail} when SoulMemoir launches with your personalized reflection experience.</p>
-            </div>
-        `;
-        message.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(16, 185, 129, 0.95);
-            color: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            z-index: 1000;
-            max-width: 400px;
-            text-align: center;
-            animation: messageSlideIn 0.5s ease-out;
-        `;
-
-        document.body.appendChild(message);
-
-        setTimeout(() => {
-            message.style.animation = 'messageSlideOut 0.5s ease-in forwards';
-            setTimeout(() => message.remove(), 500);
-        }, 4000);
     };
 
     window.restartQuiz = function() {
