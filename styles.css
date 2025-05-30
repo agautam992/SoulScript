@@ -676,13 +676,13 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
-.chapter-prompts {
+.chapter-reflections {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
 
-.prompt {
+.reflection {
     background: var(--surface);
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
@@ -728,19 +728,19 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Prompts Section */
-.prompts {
+/* Life Reflections Section */
+.reflections {
     padding: 6rem 0;
     background: white;
 }
 
-.prompts-showcase {
+.reflections-showcase {
     max-width: 800px;
     margin: 0 auto 4rem;
     position: relative;
 }
 
-.prompt-carousel {
+.reflection-carousel {
     position: relative;
     height: 300px;
     overflow: hidden;
@@ -748,7 +748,7 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
 }
 
-.prompt-slide {
+.reflection-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -765,12 +765,12 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.5s ease;
 }
 
-.prompt-slide.active {
+.reflection-slide.active {
     opacity: 1;
     transform: translateX(0);
 }
 
-.prompt-icon {
+.reflection-icon {
     width: 4rem;
     height: 4rem;
     border-radius: 1rem;
@@ -782,42 +782,42 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-.prompt-icon.childhood {
+.reflection-icon.childhood {
     background: linear-gradient(135deg, #fbbf24, #f59e0b);
 }
 
-.prompt-icon.growth {
+.reflection-icon.growth {
     background: linear-gradient(135deg, #10b981, #059669);
 }
 
-.prompt-icon.love {
+.reflection-icon.love {
     background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
-.prompt-icon.legacy {
+.reflection-icon.legacy {
     background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
-.prompt-slide h3 {
+.reflection-slide h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
     font-family: 'Playfair Display', serif;
 }
 
-.prompt-slide p {
+.reflection-slide p {
     color: var(--text-secondary);
     font-size: 1.125rem;
 }
 
-.prompt-controls {
+.reflection-controls {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
 }
 
-.prompt-btn {
+.reflection-btn {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -829,14 +829,14 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
 }
 
-.prompt-btn.active,
-.prompt-btn:hover {
+.reflection-btn.active,
+.reflection-btn:hover {
     border-color: var(--primary-color);
     background: var(--primary-color);
     color: white;
 }
 
-.prompt-navigation {
+.reflection-navigation {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -871,13 +871,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
 }
 
-.mini-prompts {
+.mini-reflections {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
-.mini-prompt {
+.mini-reflection {
     padding: 1rem 1.5rem;
     border-radius: 0.75rem;
     text-align: center;
@@ -887,28 +887,28 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
-.mini-prompt:hover {
+.mini-reflection:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.mini-prompt.childhood {
+.mini-reflection.childhood {
     background: linear-gradient(135deg, #fbbf24, #f59e0b);
 }
 
-.mini-prompt.love {
+.mini-reflection.love {
     background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
-.mini-prompt.growth {
+.mini-reflection.growth {
     background: linear-gradient(135deg, #10b981, #059669);
 }
 
-.mini-prompt.achievements {
+.mini-reflection.achievements {
     background: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
 
-.mini-prompt.legacy {
+.mini-reflection.legacy {
     background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
@@ -1032,13 +1032,13 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
-.timeline-prompts {
+.timeline-reflections {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
 }
 
-.prompt-tag {
+.reflection-tag {
     background: rgba(59, 130, 246, 0.2);
     color: rgba(255, 255, 255, 0.9);
     padding: 0.5rem 1rem;
@@ -1939,13 +1939,13 @@ h1, h2, h3, h4, h5, h6 {
 button,
 .btn,
 .quiz-option,
-.prompt-btn,
+.reflection-btn,
 .nav-btn,
 .mobile-menu-btn,
 input[type="submit"],
 input[type="button"],
 .download-link,
-.mini-prompt,
+.mini-reflection,
 .memory-bubble,
 .style-card,
 a[href="#download"],
@@ -1967,10 +1967,10 @@ a[href="#get-started"],
 button:hover,
 .btn:hover,
 .quiz-option:hover,
-.prompt-btn:hover,
+.reflection-btn:hover,
 .nav-btn:hover,
 .download-link:hover,
-.mini-prompt:hover,
+.mini-reflection:hover,
 .memory-bubble:hover,
 .style-card:hover {
     transform: none !important;
