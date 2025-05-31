@@ -1935,19 +1935,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Disable specific interactive elements - Windows Coming Soon Style */
 .quiz-option,
-.reflection-btn,
-.nav-btn,
 .mobile-menu-btn,
 input[type="submit"],
 input[type="button"],
-.download-link,
 .memory-bubble,
-a[href="#download"],
-a[href="#get-started"],
+.nav-actions a[href="#download"],
+.nav-actions a[href="#get-started"],
 .quiz-start,
 .quiz-next,
-button:not(.modal-close),
-.nav-actions .btn {
+.nav-actions .btn,
+button[disabled],
+.btn[disabled] {
     cursor: not-allowed !important;
     opacity: 0.4 !important;
     pointer-events: none !important;
@@ -2087,6 +2085,63 @@ button:not(.modal-close),
     animation: pulse-glow 1.5s ease-in-out infinite;
 }
 
+/* Enable reflection navigation buttons */
+.reflection-btn,
+.nav-btn {
+    cursor: pointer !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+    filter: none !important;
+    background: var(--surface) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border) !important;
+    transition: all 0.3s ease !important;
+}
+
+.reflection-btn:hover,
+.nav-btn:hover {
+    background: var(--primary-color) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+.reflection-btn.active {
+    background: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Style download links properly */
+.download-link {
+    cursor: pointer !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+    filter: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.download-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure footer links display properly */
+.footer-links a {
+    cursor: pointer !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+    filter: none !important;
+    color: var(--text-secondary) !important;
+    transition: all 0.3s ease !important;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color) !important;
+}
+
 /* Reflection Modal Styling */
 .reflection-modal .modal-content {
     background: white;
@@ -2196,12 +2251,12 @@ button:not(.modal-close),
 
 /* Disable hover effects for disabled elements only */
 .quiz-option:hover,
-.reflection-btn:hover,
-.nav-btn:hover,
-.download-link:hover,
 .memory-bubble:hover,
-button:not(.modal-close):hover,
-.nav-actions .btn:hover {
+.nav-actions .btn:hover,
+.nav-actions a[href="#download"]:hover,
+.nav-actions a[href="#get-started"]:hover,
+button[disabled]:hover,
+.btn[disabled]:hover {
     transform: none !important;
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.1) !important;
     background: #f5f5f5 !important;
