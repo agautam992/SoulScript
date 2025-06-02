@@ -2147,7 +2147,25 @@ button[disabled],
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center;
     display: block;
+}
+
+/* Ensure logo container has proper dimensions */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Footer logo specific styling */
+.footer-logo .logo {
+    width: 2rem;
+    height: 2rem;
 }
 
 /* Reflection Modal Styling */
