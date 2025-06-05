@@ -72,6 +72,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-advance carousel
     setInterval(nextSlide, 5000);
 
+    // Reflection Carousel Functionality
+    let currentReflectionSlide = 0;
+    const reflectionSlides = document.querySelectorAll('.reflection-slide');
+    const reflectionBtns = document.querySelectorAll('.reflection-btn');
+    const prevReflectionBtn = document.getElementById('prevReflection');
+    const nextReflectionBtn = document.getElementById('nextReflection');
+
+    function showReflectionSlide(index) {
+        reflectionSlides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+
+        reflectionBtns.forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
+
+        currentReflectionSlide = index;
+    }
+
+    function nextReflectionSlide() {
+        const next = (currentReflectionSlide + 1) % reflectionSlides.length;
+        showReflectionSlide(next);
+    }
+
+    function prevReflectionSlide() {
+        const prev = (currentReflectionSlide - 1 + reflectionSlides.length) % reflectionSlides.length;
+        showReflectionSlide(prev);
+    }
+
+    // Event listeners for reflection carousel
+    if (nextReflectionBtn) nextReflectionBtn.addEventListener('click', nextReflectionSlide);
+    if (prevReflectionBtn) prevReflectionBtn.addEventListener('click', prevReflectionSlide);
+
+    reflectionBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => showReflectionSlide(index));
+    });
+
+    // Auto-advance reflection carousel
+    setInterval(nextReflectionSlide, 7000);
+
     // Animate elements on scroll with enhanced effects
     const observerOptions = {
         threshold: 0.1,
