@@ -1,928 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3SQF8EK4B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R3SQF8EK4B');
-</script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoulMemoir - Personal Reflection & Life Story App</title>
-    <meta name="description" content="Transform your inner thoughts into meaningful stories with SoulMemoir. A premium personal reflection app featuring 15 curated life questions, intelligent journaling, and beautiful export options. Privacy-focused with local data storage.">
-    <meta name="keywords" content="personal reflection, life story, journaling app, self-reflection, autobiography, mindfulness, personal growth, life prompts, digital diary, privacy-focused">
+    <title>SoulMemoir - Coming Soon</title>
+    <link rel="icon" type="image/png" href="soulmemoir_brand_logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://soulmemoir.com/">
-    <meta property="og:title" content="SoulMemoir - Personal Reflection & Life Story App">
-    <meta property="og:description" content="Transform your inner thoughts into meaningful stories with SoulMemoir. A premium personal reflection app featuring 15 curated life questions, intelligent journaling, and beautiful export options.">
-    <meta property="og:image" content="https://soulmemoir.com/soulmemoir_brand_logo.png">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://soulmemoir.com/">
-    <meta property="twitter:title" content="SoulMemoir - Personal Reflection & Life Story App">
-    <meta property="twitter:description" content="Transform your inner thoughts into meaningful stories with SoulMemoir. Privacy-focused personal reflection app with 15 curated life questions.">
-    <meta property="twitter:image" content="https://soulmemoir.com/soulmemoir_brand_logo.png">
+        .coming-soon-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="soulmemoir_brand_logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="soulmemoir_brand_logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="soulmemoir_brand_logo.png">
-    <link rel="shortcut icon" href="soulmemoir_brand_logo.png">
-    <meta name="msapplication-TileImage" content="soulmemoir_brand_logo.png">
-    <meta name="msapplication-TileColor" content="#3b82f6">
-    <meta name="theme-color" content="#3b82f6">
+        .brand-name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    <link rel="stylesheet" href="styles.css">
+        .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .coming-soon-text {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .brand-name {
+                font-size: 2.5rem;
+            }
+            
+            .coming-soon-text {
+                font-size: 1.5rem;
+            }
+            
+
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <div class="logo">
-                    <img src="soulmemoir_brand_logo.png" alt="SoulMemoir Logo" class="logo-image">
-                </div>
-                <span class="brand-name">SoulMemoir</span>
-            </div>
-
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#chapters">Life Chapters</a>
-                <a href="#reflections">Life Questions</a>
-                <a href="#testimonials">Testimonials</a>
-            </div>
-
-            <div class="nav-actions">
-                <a href="#download" class="btn">
-                    <i class="fab fa-windows"></i>
-                    Download for Windows
-                    <i class="fas fa-download"></i>
-                </a>
-                <a href="#get-started" class="btn">
-                    <i class="fab fa-apple"></i>
-                    Mac - Coming Soon
-                </a>
-            </div>
-
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Unique Animated Background -->
-        <div class="hero-background">
-            <!-- Floating Memory Bubbles -->
-            <div class="memory-bubble" style="top: 15%; left: 8%;" data-memory="childhood">
-                <div class="bubble-content">
-                    <i class="fas fa-baby"></i>
-                    <span class="bubble-text">First Steps</span>
-                </div>
-            </div>
-            <div class="memory-bubble" style="top: 25%; right: 12%;" data-memory="love">
-                <div class="bubble-content">
-                    <i class="fas fa-heart"></i>
-                    <span class="bubble-text">First Love</span>
-                </div>
-            </div>
-            <div class="memory-bubble" style="bottom: 35%; left: 15%;" data-memory="growth">
-                <div class="bubble-content">
-                    <i class="fas fa-seedling"></i>
-                    <span class="bubble-text">Growth</span>
-                </div>
-            </div>
-            <div class="memory-bubble" style="bottom: 25%; right: 8%;" data-memory="dreams">
-                <div class="bubble-content">
-                    <i class="fas fa-star"></i>
-                    <span class="bubble-text">Dreams</span>
-                </div>
-            </div>
-
-            <!-- Unique Constellation Effect -->
-            <div class="constellation">
-                <div class="constellation-line" data-from="0" data-to="1"></div>
-                <div class="constellation-line" data-from="1" data-to="2"></div>
-                <div class="constellation-line" data-from="2" data-to="3"></div>
-                <div class="constellation-line" data-from="3" data-to="0"></div>
-            </div>
-
-            <!-- Animated Quote Particles -->
-            <div class="quote-particle" style="top: 10%; left: 25%;">"</div>
-            <div class="quote-particle" style="top: 40%; right: 20%;">"</div>
-            <div class="quote-particle" style="bottom: 15%; left: 30%;">"</div>
+    <div class="coming-soon-container">
+        <div class="logo">
+            <img src="soulmemoir_brand_logo.png" alt="SoulMemoir Logo">
         </div>
 
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-sparkles"></i>
-                    Transform Your Inner Thoughts Into Meaningful Stories
-                </div>
+        <h1 class="brand-name">SoulMemoir</h1>
+        <p class="tagline">Transform Your Inner Thoughts Into Meaningful Stories</p>
 
-                <h1 class="hero-title">
-                    Your Life Story<br>
-                    <span class="gradient-text">Beautifully Told</span>
-                </h1>
-
-                <p class="hero-subtitle">
-                    SoulMemoir is a premium personal reflection app featuring 15 curated life questions,
-                    intelligent journaling, and beautiful export options. Privacy-focused with local data storage.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#get-started" class="btn btn-primary btn-large">
-                        <i class="fas fa-clock"></i>
-                        Coming Soon
-                        <i class="fas fa-hourglass-half"></i>
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="stat-value">Coming</div>
-                        <div class="stat-label">Soon</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="stat-value">Premium</div>
-                        <div class="stat-label">Experience</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="stat-value">Privacy</div>
-                        <div class="stat-label">Focused</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-icon">
-                            <i class="fas fa-sparkles"></i>
-                        </div>
-                        <div class="stat-value">Unique</div>
-                        <div class="stat-label">Features</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="scroll-indicator">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Everything You Need for <span class="gradient-text">Meaningful Reflection</span></h2>
-                <p>SoulMemoir combines thoughtful design with powerful features to create the perfect environment for deep self-reflection and life storytelling.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon heart">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Deep Reflection System</h3>
-                    <p>15 carefully crafted life questions covering major themes like childhood, regret, love, growth, and legacy.</p>
-                </div>
-
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon book">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3>Intelligent Journaling</h3>
-                    <p>Rich text editor with word count tracking, auto-save functionality, and chapter-based organization.</p>
-                </div>
-
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon target">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Life Chapters Organization</h3>
-                    <p>Automatic categorization into 5 life themes with visual chapter browsing and color coding.</p>
-                </div>
-
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon lightning">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Streak Tracking & Habits</h3>
-                    <p>Daily reflection streak monitoring with milestone celebrations and customizable reminders.</p>
-                </div>
-
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-icon shield">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Privacy-Focused</h3>
-                    <p>All data stored locally on your device. No cloud storage, no data transmission, complete offline functionality.</p>
-                </div>
-
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="feature-icon file">
-                        <i class="fas fa-file-export"></i>
-                    </div>
-                    <h3>Beautiful Export Options</h3>
-                    <p>Export your reflections as PDF with custom styling, plain text, or Markdown format.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Life Chapters Section -->
-    <section id="chapters" class="chapters">
-        <div class="container">
-            <div class="section-header">
-                <h2>Organize Your Life Into <span class="gradient-text">Meaningful Chapters</span></h2>
-                <p>SoulMemoir automatically categorizes your reflections into five profound life themes, helping you see the beautiful narrative of your journey.</p>
-            </div>
-
-            <div class="chapters-grid">
-                <div class="chapter-card childhood" data-aos="zoom-in">
-                    <div class="chapter-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>Childhood</h3>
-                    <p>Explore your earliest memories, formative experiences, and the innocence of youth.</p>
-                    <div class="chapter-reflections">
-                        <div class="reflection">"What is your earliest memory?"</div>
-                        <div class="reflection">"Who was your childhood hero?"</div>
-                        <div class="reflection">"What made you feel safest as a child?"</div>
-                    </div>
-                </div>
-
-                <div class="chapter-card love" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="chapter-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Love & Relationships</h3>
-                    <p>Reflect on connections, heartbreaks, and the people who shaped your heart.</p>
-                    <div class="chapter-reflections">
-                        <div class="reflection">"When did you first experience love?"</div>
-                        <div class="reflection">"Who taught you about forgiveness?"</div>
-                        <div class="reflection">"What relationship changed you most?"</div>
-                    </div>
-                </div>
-
-                <div class="chapter-card growth" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="chapter-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Growth & Learning</h3>
-                    <p>Document your journey of self-discovery, challenges overcome, and wisdom gained.</p>
-                    <div class="chapter-reflections">
-                        <div class="reflection">"What failure taught you the most?"</div>
-                        <div class="reflection">"When did you feel most proud?"</div>
-                        <div class="reflection">"What belief did you outgrow?"</div>
-                    </div>
-                </div>
-
-                <div class="chapter-card achievements" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="chapter-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Achievements & Regrets</h3>
-                    <p>Honor your accomplishments while making peace with paths not taken.</p>
-                    <div class="chapter-reflections">
-                        <div class="reflection">"What achievement means most to you?"</div>
-                        <div class="reflection">"What would you do differently?"</div>
-                        <div class="reflection">"What risk are you glad you took?"</div>
-                    </div>
-                </div>
-
-                <div class="chapter-card legacy" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="chapter-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Legacy & Future</h3>
-                    <p>Envision your impact on the world and the story you want to leave behind.</p>
-                    <div class="chapter-reflections">
-                        <div class="reflection">"How do you want to be remembered?"</div>
-                        <div class="reflection">"What wisdom would you share?"</div>
-                        <div class="reflection">"What dreams still call to you?"</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Unique Interactive Life Timeline -->
-    <section class="life-timeline">
-        <div class="container">
-            <div class="section-header">
-                <h2>Your Life Journey <span class="gradient-text">Visualized</span></h2>
-                <p>Explore how SoulMemoir helps you map the beautiful tapestry of your life experiences across different ages and stages.</p>
-            </div>
-
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
-
-                <div class="timeline-item" data-age="5-12" data-aos="fade-right">
-                    <div class="timeline-marker childhood">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Childhood Wonder</h3>
-                        <p>Capture the magic of your earliest memories, family traditions, and the innocent curiosity that shaped your worldview.</p>
-                        <div class="timeline-reflections">
-                            <span class="reflection-tag">"What made you feel safest?"</span>
-                            <span class="reflection-tag">"Who was your hero?"</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-age="13-25" data-aos="fade-left">
-                    <div class="timeline-marker growth">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Discovery & Growth</h3>
-                        <p>Document the transformative years of self-discovery, first loves, dreams, and the challenges that forged your character.</p>
-                        <div class="timeline-reflections">
-                            <span class="reflection-tag">"When did you first feel grown up?"</span>
-                            <span class="reflection-tag">"What dream felt impossible?"</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-age="26-45" data-aos="fade-right">
-                    <div class="timeline-marker achievements">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Building & Achieving</h3>
-                        <p>Reflect on career milestones, relationships, family building, and the moments of triumph and learning from setbacks.</p>
-                        <div class="timeline-reflections">
-                            <span class="reflection-tag">"What achievement means most?"</span>
-                            <span class="reflection-tag">"What would you do differently?"</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-age="46+" data-aos="fade-left">
-                    <div class="timeline-marker legacy">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Wisdom & Legacy</h3>
-                        <p>Contemplate the wisdom gained, the legacy you're building, and the stories you want to pass on to future generations.</p>
-                        <div class="timeline-reflections">
-                            <span class="reflection-tag">"How do you want to be remembered?"</span>
-                            <span class="reflection-tag">"What wisdom would you share?"</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-cta">
-                <p class="timeline-message">Every age brings new stories. Start capturing yours today.</p>
-                <a href="#download" class="btn btn-primary">
-                    <i class="fas fa-clock"></i>
-                    Coming Soon
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Life Reflections Section -->
-    <section id="reflections" class="reflections">
-        <div class="container">
-            <div class="section-header">
-                <h2>Thoughtfully Crafted <span class="gradient-text">Life Questions</span></h2>
-                <p>Our 15 carefully designed questions guide you through the most meaningful aspects of your life journey, based on psychological principles and human experience.</p>
-            </div>
-
-            <div class="reflections-showcase">
-                <div class="reflection-carousel">
-                    <div class="reflection-slide active" data-category="Childhood">
-                        <div class="reflection-icon childhood">
-                            <i class="fas fa-baby"></i>
-                        </div>
-                        <h3>"What is your earliest memory, and how does it make you feel today?"</h3>
-                        <p>Explore the foundations of your identity through your first conscious moments.</p>
-                    </div>
-
-                    <div class="reflection-slide" data-category="Growth">
-                        <div class="reflection-icon growth">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                        <h3>"Describe a moment when you realized you had grown as a person."</h3>
-                        <p>Reflect on the pivotal moments that shaped your character and wisdom.</p>
-                    </div>
-
-                    <div class="reflection-slide" data-category="Love">
-                        <div class="reflection-icon love">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>"Who taught you the most about love, and what did they teach you?"</h3>
-                        <p>Honor the relationships that opened your heart and changed your perspective.</p>
-                    </div>
-
-                    <div class="reflection-slide" data-category="Legacy">
-                        <div class="reflection-icon legacy">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>"How do you want to be remembered by those who matter most to you?"</h3>
-                        <p>Envision the impact you want to leave and the story you want to tell.</p>
-                    </div>
-                </div>
-
-                <div class="reflection-controls">
-                    <button class="reflection-btn active" data-slide="0">1</button>
-                    <button class="reflection-btn" data-slide="1">2</button>
-                    <button class="reflection-btn" data-slide="2">3</button>
-                    <button class="reflection-btn" data-slide="3">4</button>
-                </div>
-
-                <div class="reflection-navigation">
-                    <button class="nav-btn prev" id="prevReflection">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="nav-btn next" id="nextReflection">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="reflections-grid">
-                <h3>All 15 Life-Changing Questions</h3>
-                <div class="mini-reflections">
-                    <div class="mini-reflection childhood">Childhood Memories</div>
-                    <div class="mini-reflection love">First Love</div>
-                    <div class="mini-reflection growth">Personal Growth</div>
-                    <div class="mini-reflection achievements">Greatest Achievement</div>
-                    <div class="mini-reflection legacy">Life Legacy</div>
-                    <div class="mini-reflection childhood">Family Traditions</div>
-                    <div class="mini-reflection love">Heartbreak & Healing</div>
-                    <div class="mini-reflection growth">Overcoming Fear</div>
-                    <div class="mini-reflection achievements">Biggest Regret</div>
-                    <div class="mini-reflection legacy">Future Dreams</div>
-                    <div class="mini-reflection childhood">Childhood Hero</div>
-                    <div class="mini-reflection love">Forgiveness</div>
-                    <div class="mini-reflection growth">Life Lessons</div>
-                    <div class="mini-reflection achievements">Proud Moments</div>
-                    <div class="mini-reflection legacy">Wisdom to Share</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Unique Soul Insights Section -->
-    <section class="soul-insights">
-        <div class="container">
-            <div class="section-header">
-                <h2>Discover Your <span class="gradient-text">Reflection Style</span></h2>
-                <p>SoulMemoir adapts to your unique personality and reflection preferences. Find your perfect journaling approach.</p>
-            </div>
-
-            <div class="insights-quiz">
-                <!-- Step 1: User Information -->
-                <div class="quiz-step active" data-step="1">
-                    <div class="quiz-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 25%"></div>
-                        </div>
-                        <span class="progress-text">Step 1 of 4</span>
-                    </div>
-                    <h3>Let's Get Started</h3>
-                    <p>Tell us a bit about yourself to personalize your reflection journey</p>
-                    <div class="quiz-form">
-                        <div class="form-group">
-                            <label for="userName">Your Name</label>
-                            <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="userEmail">Email Address</label>
-                            <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required>
-                        </div>
-                        <button class="btn btn-primary quiz-next" onclick="nextQuizStep()">
-                            <i class="fas fa-clock"></i> Coming Soon <i class="fas fa-hourglass-half"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Reflection Style Question -->
-                <div class="quiz-step" data-step="2">
-                    <div class="quiz-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 50%"></div>
-                        </div>
-                        <span class="progress-text">Step 2 of 4</span>
-                    </div>
-                    <h3>How do you prefer to process emotions?</h3>
-                    <div class="quiz-options">
-                        <button class="quiz-option" data-style="analytical" onclick="selectOption(this, 'style', 'analytical')">
-                            <i class="fas fa-brain"></i>
-                            <span>Through deep analysis and understanding</span>
-                        </button>
-                        <button class="quiz-option" data-style="creative" onclick="selectOption(this, 'style', 'creative')">
-                            <i class="fas fa-palette"></i>
-                            <span>Through creative expression and imagery</span>
-                        </button>
-                        <button class="quiz-option" data-style="intuitive" onclick="selectOption(this, 'style', 'intuitive')">
-                            <i class="fas fa-heart"></i>
-                            <span>Through feeling and intuitive connection</span>
-                        </button>
-                        <button class="quiz-option" data-style="structured" onclick="selectOption(this, 'style', 'structured')">
-                            <i class="fas fa-list"></i>
-                            <span>Through organized lists and frameworks</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Time Preference Question -->
-                <div class="quiz-step" data-step="3">
-                    <div class="quiz-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 75%"></div>
-                        </div>
-                        <span class="progress-text">Step 3 of 4</span>
-                    </div>
-                    <h3>When do you prefer to reflect?</h3>
-                    <div class="quiz-options">
-                        <button class="quiz-option" data-time="morning" onclick="selectOption(this, 'time', 'morning')">
-                            <i class="fas fa-sun"></i>
-                            <span>Morning - Fresh start with clear mind</span>
-                        </button>
-                        <button class="quiz-option" data-time="evening" onclick="selectOption(this, 'time', 'evening')">
-                            <i class="fas fa-moon"></i>
-                            <span>Evening - Winding down and processing the day</span>
-                        </button>
-                        <button class="quiz-option" data-time="flexible" onclick="selectOption(this, 'time', 'flexible')">
-                            <i class="fas fa-clock"></i>
-                            <span>Flexible - Whenever inspiration strikes</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 4: Results -->
-                <div class="quiz-step" data-step="4">
-                    <div class="quiz-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 100%"></div>
-                        </div>
-                        <span class="progress-text">Complete!</span>
-                    </div>
-                    <div class="quiz-results">
-                        <div class="results-header">
-                            <i class="fas fa-sparkles"></i>
-                            <h3>Your Personalized Reflection Profile</h3>
-                            <p class="user-greeting"></p>
-                        </div>
-                        <div class="results-content">
-                            <div class="result-style">
-                                <h4>Your Reflection Style</h4>
-                                <div class="style-result"></div>
-                            </div>
-                            <div class="result-recommendations">
-                                <h4>Recommended for You</h4>
-                                <div class="recommendations-list"></div>
-                            </div>
-                            <div class="result-actions">
-                                <button class="btn btn-primary" onclick="submitQuizResults()">
-                                    <i class="fas fa-clock"></i>
-                                    Coming Soon
-                                </button>
-                                <button class="btn btn-secondary" onclick="restartQuiz()">
-                                    <i class="fas fa-clock"></i>
-                                    Coming Soon
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="reflection-styles">
-                <div class="style-card analytical">
-                    <div class="style-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>The Analytical Soul</h3>
-                    <p>You thrive on deep thinking and connecting patterns. Your reflections explore the 'why' behind experiences.</p>
-                    <div class="style-features">
-                        <span class="feature">Cause & Effect Analysis</span>
-                        <span class="feature">Pattern Recognition</span>
-                        <span class="feature">Logical Frameworks</span>
-                    </div>
-                </div>
-
-                <div class="style-card creative">
-                    <div class="style-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>The Creative Storyteller</h3>
-                    <p>You see life as a beautiful narrative. Your reflections paint vivid pictures and explore metaphors.</p>
-                    <div class="style-features">
-                        <span class="feature">Visual Storytelling</span>
-                        <span class="feature">Metaphorical Thinking</span>
-                        <span class="feature">Artistic Expression</span>
-                    </div>
-                </div>
-
-                <div class="style-card intuitive">
-                    <div class="style-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>The Intuitive Feeler</h3>
-                    <p>You trust your inner wisdom and emotional intelligence. Your reflections honor feelings and instincts.</p>
-                    <div class="style-features">
-                        <span class="feature">Emotional Intelligence</span>
-                        <span class="feature">Inner Wisdom</span>
-                        <span class="feature">Mindful Awareness</span>
-                    </div>
-                </div>
-
-                <div class="style-card structured">
-                    <div class="style-icon">
-                        <i class="fas fa-list"></i>
-                    </div>
-                    <h3>The Structured Planner</h3>
-                    <p>You love organization and clear frameworks. Your reflections create actionable insights and goals.</p>
-                    <div class="style-features">
-                        <span class="feature">Goal Setting</span>
-                        <span class="feature">Action Planning</span>
-                        <span class="feature">Progress Tracking</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="insights-cta">
-                <div class="cta-content">
-                    <h3>Ready to discover your unique reflection style?</h3>
-                    <p>Take our 2-minute Soul Insights quiz and get personalized prompts tailored to your personality.</p>
-                    <button class="btn btn-primary btn-large quiz-start">
-                        <i class="fas fa-clock"></i>
-                        Coming Soon
-                        <i class="fas fa-hourglass-half"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Loved by Reflective <span class="gradient-text">Souls Worldwide</span></h2>
-                <p>Join thousands of people who have discovered the power of structured self-reflection and transformed their relationship with their own story.</p>
-            </div>
-
-            <div class="testimonials-stats">
-                <div class="stat-item">
-                    <div class="stat-number">Coming</div>
-                    <div class="stat-text">Soon</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Premium</div>
-                    <div class="stat-text">Quality</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Privacy</div>
-                    <div class="stat-text">First</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Unique</div>
-                    <div class="stat-text">Experience</div>
-                </div>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card" data-aos="fade-up">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <blockquote>"SoulMemoir transformed how I approach self-reflection. The prompts are incredibly thoughtful and helped me uncover patterns in my life I never noticed before."</blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SC</div>
-                        <div class="author-info">
-                            <div class="author-name">Sarah Chen</div>
-                            <div class="author-role">Life Coach & Author</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <blockquote>"As someone who's always been too busy to journal, SoulMemoir made reflection accessible and meaningful. The export feature let me create a beautiful book for my family."</blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MR</div>
-                        <div class="author-info">
-                            <div class="author-name">Marcus Rodriguez</div>
-                            <div class="author-role">Entrepreneur</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <blockquote>"At 67, I thought I knew my own story. SoulMemoir helped me discover new chapters and make peace with old ones. The life chapters feature is brilliant."</blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JT</div>
-                        <div class="author-info">
-                            <div class="author-name">James Thompson</div>
-                            <div class="author-role">Retired Teacher</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="download">
-        <div class="container">
-            <div class="download-content">
-                <div class="download-text">
-                    <h2>Start Your <span class="gradient-text">Reflection Journey</span> Today</h2>
-                    <p>Join thousands of people who have transformed their relationship with their own story. Download SoulMemoir and begin exploring the depths of your life experience.</p>
-
-                    <div class="download-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>15 thoughtfully crafted life prompts</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Complete privacy with local storage</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Beautiful export options (PDF, TXT, MD)</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Coming soon to all major platforms</span>
-                        </div>
-                    </div>
-
-                    <div class="download-buttons">
-                        <a href="downloads/SoulMemoir_Installer_v1.0.0.exe" class="btn btn-primary btn-large" download>
-                            <i class="fab fa-windows"></i>
-                            Download for Windows
-                            <i class="fas fa-download"></i>
-                        </a>
-                        <button class="btn btn-secondary btn-large" disabled>
-                            <i class="fab fa-apple"></i>
-                            Mac - Coming Soon
-                        </button>
-                    </div>
-
-
-                </div>
-
-                <div class="download-visual">
-                    <div class="app-mockup">
-                        <div class="mockup-screen">
-                            <div class="mockup-header">
-                                <div class="mockup-dots">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                                <div class="mockup-title">SoulMemoir</div>
-                            </div>
-                            <div class="mockup-content">
-                                <div class="mockup-prompt">
-                                    <h4>"What is your earliest memory?"</h4>
-                                    <div class="mockup-text-area">
-                                        <div class="typing-indicator">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="logo">
-                            <img src="soulmemoir_brand_logo.png" alt="SoulMemoir Logo" class="logo-image">
-                        </div>
-                        <span class="brand-name">SoulMemoir</span>
-                    </div>
-                    <p>Transform your inner thoughts into meaningful stories. A premium personal reflection app designed for deep self-discovery.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" aria-label="Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#chapters">Life Chapters</a>
-                        <a href="#reflections">Life Questions</a>
-                        <a href="#download">Download</a>
-                    </div>
-
-                    <div class="link-group">
-                        <h4>Support</h4>
-                        <a href="#">Help Center</a>
-                        <a href="#">Contact Us</a>
-                        <a href="#">User Guide</a>
-                        <a href="#">FAQ</a>
-                    </div>
-
-                    <div class="link-group">
-                        <h4>Company</h4>
-                        <a href="#">About Us</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Blog</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>&copy; 2024 SoulMemoir. All rights reserved. Made with <i class="fas fa-heart"></i> for reflective souls.</p>
-                </div>
-                <div class="footer-badges">
-                    <div class="badge">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Privacy First</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-rocket"></i>
-                        <span>Coming Soon</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-heart"></i>
-                        <span>Premium Quality</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        <h2 class="coming-soon-text">Coming Soon</h2>
+        <p class="description">
+            We're putting the finishing touches on something beautiful.
+            SoulMemoir will help you capture and reflect on your life's most meaningful moments.
+        </p>
+    </div>
 </body>
 </html>
