@@ -1960,11 +1960,10 @@ h1, h2, h3, h4, h5, h6 {
 input[type="submit"],
 input[type="button"],
 .memory-bubble,
-.nav-actions a[href="#download"],
-.nav-actions a[href="#get-started"],
+
 .quiz-start,
 .quiz-next,
-.nav-actions .btn,
+
 button[disabled],
 .btn[disabled],
 .download-link.upcoming {
@@ -2107,6 +2106,47 @@ button[disabled],
 
 .mini-reflection.pulsing {
     animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+/* Navigation buttons - exact match to your image */
+.nav-actions .btn {
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.75rem !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Windows Download Button - Blue */
+.nav-actions a[href="#download"] {
+    background: #4285f4 !important;
+    color: white !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.nav-actions a[href="#download"]:hover {
+    background: #3367d6 !important;
+    color: white !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Coming Soon Button - Gray */
+.nav-actions a[href="#get-started"] {
+    background: #f8f9fa !important;
+    color: #6c757d !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
 }
 
 /* Reflection navigation buttons - improved visibility */
@@ -2277,9 +2317,7 @@ button[disabled],
 /* Maintain Windows disabled appearance on hover */
 .quiz-option:hover,
 .memory-bubble:hover,
-.nav-actions .btn:hover,
-.nav-actions a[href="#download"]:hover,
-.nav-actions a[href="#get-started"]:hover,
+
 button[disabled]:hover,
 .btn[disabled]:hover,
 .download-link.upcoming:hover,
@@ -2295,3 +2333,52 @@ button[disabled]:hover,
 }
 
 /* Clean disabled styling - no conflicts */
+
+/* FINAL NAVIGATION BUTTON STYLES - HIGHEST PRIORITY */
+.nav-actions .btn {
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.75rem !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* Windows Download Button - Blue Theme */
+.nav-actions a[href="#download"].btn {
+    background: #4285f4 !important;
+    color: white !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+}
+
+.nav-actions a[href="#download"].btn:hover {
+    background: #3367d6 !important;
+    color: white !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Mac Coming Soon Button - Gray Theme */
+.nav-actions a[href="#get-started"].btn {
+    background: #f8f9fa !important;
+    color: #6c757d !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+}
+
+.nav-actions a[href="#get-started"].btn:hover {
+    background: #f8f9fa !important;
+    color: #6c757d !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
